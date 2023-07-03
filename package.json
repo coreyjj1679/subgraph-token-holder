@@ -1,0 +1,8 @@
+{
+  "name": "subgrpah-docker",
+  "version": "1.0.0",
+  "main": "index.ts",
+  "author": "ruggedev <ruggedev@gmail.com>",
+  "license": "MIT",
+  "private": null
+}
