@@ -3,6 +3,8 @@
 Fetch all transfer/approval logs, user balances and token holder for your ERC20 using TheGraph. It may take weeks to
 sync the subgraph, better deploy it once you deployed your scam token.
 
+demo: https://thegraph.com/hosted-service/subgraph/ruggedev/uni-token
+
 ## Setup
 
 1. Fork this repo
