@@ -20,7 +20,7 @@ export function getInfo(): Schema.Info {
 
   if (info === null) {
     info = new Schema.Info('1')
-    info.transactionCount = constants.ZERO_BI
+    info.transferCount = constants.ZERO_BI
     info.tokenHolder = constants.ZERO_BI
 
     info.save()

@@ -47,7 +47,7 @@ export function updateUser(event: ERC20Event.Transfer): void {
     user.entity.save()
   }
 
-  info.transactionCount = info.transactionCount.plus(constants.ONE_BI)
+  info.transferCount = info.transferCount.plus(constants.ONE_BI)
   info.lastUpdateBlock = event.block.number
   info.lastUpdateTimestamp = event.block.timestamp
 

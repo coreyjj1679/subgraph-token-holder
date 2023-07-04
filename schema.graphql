@@ -9,7 +9,7 @@ type Info @entity {
   id: ID!
   lastUpdateBlock: BigInt
   lastUpdateTimestamp: BigInt
-  transactionCount: BigInt!
+  transferCount: BigInt!
   tokenHolder: BigInt!
 }
 

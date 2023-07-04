@@ -41,7 +41,7 @@ To get snapshot on a specific block height:
     id
     lastUpdateBlock
     lastUpdateTimestamp
-    transactionCount
+    transferCount
     tokenHolder
   }
 }
