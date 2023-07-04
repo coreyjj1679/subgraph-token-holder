@@ -10,11 +10,11 @@ graft:
 {{/graftEnabled}}
 dataSources:
   - kind: ethereum/contract
-    name: {{contractName}} 
+    name: ERC20
     network: {{contractNetwork}} 
     source:
       address: {{contractAddress}}
-      abi: {{contractABI}}
+      abi: ERC20
       startBlock: {{contractStartBlock}}
     mapping:
       kind: ethereum/events
