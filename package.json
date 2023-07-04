@@ -1,8 +1,33 @@
 {
   "name": "subgrpah-docker",
   "version": "1.0.0",
-  "main": "index.ts",
   "author": "ruggedev <ruggedev@gmail.com>",
   "license": "MIT",
-  "private": null
+  "private": true,
+  "workspaces": [
+    "packages/*",
+    "subgraphs/*",
+    "./*"
+  ],
+  "dependencies": {
+    "mustache": "^4.2.0"
+  },
+  "devDependencies": {
+    "@graphprotocol/graph-ts": "^0.31.0",
+    "@typescript-eslint/eslint-plugin": "^5.60.1",
+    "@typescript-eslint/parser": "^5.60.1",
+    "eslint": "^8.44.0",
+    "eslint-config-prettier": "^8.8.0",
+    "eslint-plugin-rulesdir": "^0.2.2",
+    "prettier": "^2.8.8",
+    "typescript": "^5.1.6"
+  },
+  "scripts": {
+    "codegen": "graph codegen",
+    "build": "graph build",
+    "test": "graph test",
+    "prepare:yaml": "yarn run --silent mustache mustache/config.json mustache/subgraph.template.yaml > subgraph.yaml",
+    "abi:eth": "scripts/get_abi.sh",
+    "deploy": "scripts/deploy.sh"
+  }
 }

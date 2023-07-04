@@ -1,0 +1,36 @@
+specVersion: 0.0.4
+schema:
+  file: ./schema.graphql
+{{#graftEnabled}}
+features:
+  - grafting
+graft:
+  base: {{subgraphId}} # Subgraph ID of base subgraph
+  block: {{graftStartBlock}} # Block number
+{{/graftEnabled}}
+dataSources:
+  - kind: ethereum/contract
+    name: {{contractName}} 
+    network: {{contractNetwork}} 
+    source:
+      address: {{contractAddress}}
+      abi: {{contractABI}}
+      startBlock: {{contractStartBlock}}
+    mapping:
+      kind: ethereum/events
+      apiVersion: 0.0.6
+      language: wasm/assemblyscript
+      entities:
+        - User
+        - Info
+        - Transfer
+        - Approval
+      abis:
+        - name: ERC20 
+          file: ./abis/ERC20.json
+      eventHandlers:
+        - event: Approval(indexed address,indexed address,uint256)
+          handler: handleApproval
+        - event: Transfer(indexed address,indexed address,uint256)
+          handler: handleTransfer
+      file: ./src/mappings.ts

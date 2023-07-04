@@ -1,0 +1,9 @@
+{
+  "extends": "@graphprotocol/graph-ts/types/tsconfig.base.json",
+  "include": ["./"],
+  "compilerOptions": {
+    "allowSyntheticDefaultImports": true,
+    "skipLibCheck": true
+  },
+  "lib": ["es2020"]
+}

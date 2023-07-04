@@ -1,0 +1,32 @@
+type User @entity {
+  id: ID!
+  tokenBalance: BigInt!
+  lastUpdateBlock: BigInt
+  lastUpdateTimestamp: BigInt
+}
+
+type Info @entity {
+  id: ID!
+  lastUpdateBlock: BigInt
+  lastUpdateTimestamp: BigInt
+  transactionCount: BigInt!
+  tokenHolder: BigInt!
+}
+
+type Transfer @entity(immutable: true) {
+  id: ID!
+  from: Bytes!
+  to: Bytes!
+  amount: BigInt!
+  block: BigInt!
+  timestamp: BigInt!
+}
+
+type Approval @entity(immutable: true) {
+  id: ID!
+  owner: Bytes!
+  spender: Bytes!
+  amount: BigInt!
+  block: BigInt!
+  timestamp: BigInt!
+}
